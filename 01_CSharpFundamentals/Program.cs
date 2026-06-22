@@ -99,11 +99,11 @@ var isSmallerThanZeroAndEven = number < 0 && number % 2 == 0; //the second condi
 //###################
 //if/else statements
 //###################
-if (userInput.Length <= 3)
+if (userInput?.Length <= 3)
 {
     Console.WriteLine("Short answer");
 }
-else if (userInput.Length < 10)
+else if (userInput?.Length < 10)
 {
     Console.WriteLine("Medium answer");
 }
