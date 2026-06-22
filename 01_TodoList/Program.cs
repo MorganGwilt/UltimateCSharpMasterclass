@@ -59,7 +59,7 @@ void AddTodo()
     do
     {
         Console.WriteLine("Enter the TODO description:");
-        description = Console.ReadLine();
+        description = Console.ReadLine() ?? "";
     }
     while (!IsDescriptionValid(description));
     todos.Add(description);
