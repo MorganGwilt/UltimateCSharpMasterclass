@@ -8,18 +8,12 @@ public interface ILogger
     void Log(Exception ex);
 }
 
-public class PersonDataReader
+public class PersonDataReader(
+    IPeopleRepository personRepository,
+    ILogger logger)
 {
-    private readonly IPeopleRepository _peopleRepository;
-    private readonly ILogger _logger;
-
-    public PersonDataReader(
-        IPeopleRepository personRepository,
-        ILogger logger)
-    {
-        _peopleRepository = personRepository;
-        _logger = logger;
-    }
+    private readonly IPeopleRepository _peopleRepository = personRepository;
+    private readonly ILogger _logger = logger;
 
     public Person ReadPersonData(int personId)
     {
